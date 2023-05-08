@@ -2,10 +2,10 @@
 # В исходном списке минимум 2 элемента.
 
 def modification(lst):
-    last_element = lst.pop()  # Удаляем последний элемент и сохраняем его в переменную
-    first_element = lst.pop(0)  # Удаляем первый элемент и сохраняем его в переменную
-    lst.append(first_element)  # Добавляем к списку новый последний элемент
-    lst.insert(0, last_element)  # Добавляем к списку новый первый элемент
+    last_element = lst.pop()
+    first_element = lst.pop(0)
+    lst.append(first_element)
+    lst.insert(0, last_element) 
     return lst
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
