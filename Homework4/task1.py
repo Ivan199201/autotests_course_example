@@ -15,7 +15,6 @@ def which_triangle(a, b, c):
         type_triangle = "Равнобедренный"
     return type_triangle
 
-
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 
