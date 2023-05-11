@@ -8,11 +8,11 @@ from statistics import mean
 def get_list_info(lst):
     min_elem = min(lst)
     max_elem = max(lst)
-    round_sum = sum(lst)
-    round_mean = mean(lst)
-    sum_list = round(round_sum, 2)
-    average = round(round_mean, 2)
-    return min_elem, max_elem, sum_list, average
+    sum_list = sum(lst)
+    mean_list = mean(lst)
+    round_sum = round(sum_list, 2)
+    round_average = round(mean_list, 2)
+    return min_elem, max_elem, round_sum, round_average
 
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
