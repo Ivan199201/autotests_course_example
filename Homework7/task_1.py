@@ -9,18 +9,27 @@
 # Segment((-2, -3), (4, 5)).x_axis_intersection() --> True
 # Segment((-2, -3), (4, -5)).y_axis_intersection() --> False
 class Segment:
-    def __init__(self, first_point, second_point):
-        self.first_point = first_point
-        self.second_point = second_point
+    def __init__(self, point1, point2):
+        assert len(point1) == len(point2)
+        self.x1 = point1[0]
+        self.y1 = point1[1]
+        self.x2 = point2[0]
+        self.y2 = point2[1]
 
     def length(self):
-        return round(((self.first_point[0] - self.second_point[0]) ** 2 + (self.first_point[1] - self.second_point[1]) ** 2) ** 0.5, 2)
+        return round(((self.x2 - self.x1) ** 2 + (self.y2 - self.y1) ** 2) ** 0.5, 2)
 
     def x_axis_intersection(self):
-        return self.first_point[1] * self.second_point[1] <= 0
+        if self.x1 * self.x2 <= 0:
+            return True
+        else:
+            return False
 
     def y_axis_intersection(self):
-        return self.first_point[0] * self.second_point[0] <= 0
+        if self.y1 * self.y2 <= 0:
+            return True
+        else:
+            return False
 
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

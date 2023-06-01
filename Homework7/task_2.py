@@ -29,16 +29,18 @@ class PersonInfo:
         self.department = department
 
     def short_name(self):
-        return self.name.split()[1] + " " + self.name.split()[0][0] + "."
+        fio_split = self.name.split()
+        fio_split = f'{fio_split[1]} {fio_split[0][0]}.'
+        return fio_split
 
     def path_deps(self):
         return " --> ".join(self.department)
 
     def new_salary(self):
-        str_dep = "".join(self.department)  # строка из всех слов без пробелов
-        letters_dict = {item: str_dep.count(item) for item in str_dep}  # словарь с количеством вхождений каждой буквы
-        list_dep = sorted(list(letters_dict.values()), reverse=True)  # отсортированный массив с количеством вхождений
-        return 1337 * self.age * (list_dep[0] + list_dep[1] + list_dep[2])
+        str_dep = "".join(self.department)
+        letters_dict = {item: str_dep.count(item) for item in str_dep}
+        list_dep = sorted(list(letters_dict.values()), reverse=True)
+        return 1337 * self.age * sum(list_dep[:3])
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 

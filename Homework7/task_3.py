@@ -34,7 +34,8 @@ class PublicTransport:
 
     @property
     def info(self):
-        print(f'Марка:{self.brand}, цвет:{self.color}, год выпуска:{self.year}, мощность двигателя:{self._engine_power}')
+        return print(self.brand, self.color, self.year, self._engine_power)
+
 
 class Bus(PublicTransport):
     def __init__(self, brand, engine_power, year, color, max_speed, passengers, park, fare):
@@ -52,6 +53,7 @@ class Bus(PublicTransport):
         assert 1000 <= number <= 9999
         self.__park = number
 
+
 class Tram(PublicTransport):
     def __init__(self, brand, engine_power, year, color, max_speed, route, path, fare):
         super().__init__(brand, engine_power, year, color, max_speed)
@@ -62,6 +64,7 @@ class Tram(PublicTransport):
     @property
     def how_long(self):
         return self.max_speed / (4 * self.path)
+
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 transport = PublicTransport('Автомобиль', 500, 2040, 'Фиолетовый', 300)
